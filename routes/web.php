@@ -18,6 +18,9 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', 'Home@show')->name('home');
+Route::get('/order', 'Order@show')->name('order');
+Route::get('/checkout', 'Checkout@show')->name('checkout');
+Route::get('/profile', 'Profile@show')->name('profile');
 
 
 Route::group(['prefix' => 'admin'], function () {

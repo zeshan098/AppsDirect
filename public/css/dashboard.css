@@ -1,163 +1,212 @@
-/*
-    DEMO STYLE
-*/
+:root {
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-gray-light: #f0f0f0;
+    --color-gray-light-1: #f9f9f9;
+    --color-gray-dark: #888484;
+    --color-gray-dark-1: #b8bcca;
+    --color-royal-blue: #5E2CED;
+}
+
+* {
+    margin: 0;
+    padding: 0
+}
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit
+}
+
+html {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    position: relative;
+}
 
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 body {
     font-family: 'Poppins', sans-serif;
-    background: #ffffff;
-}
- .fluid-container{ 
-    overflow-x: hidden;
-	margin: 0 auto;
- }
-.nav.nav-tabs {
-    float: left;
-    display: block;
-    margin-right: 20px;
-    border-bottom:0;
-    border-right: 1px solid #ddd;
-    padding-right: 15px;
-	padding-top: 65px;
-}
-.nav-tabs .nav-link {
-    border: 1px solid transparent;
-    border-top-left-radius: .25rem;
-    border-top-right-radius: .25rem;
-    background: white;
-	margin-left: 97px;
+    background-color: var(--color-white);
+    display: flex;
+    flex-direction: column;
 }
 
-.nav-tabs .nav-link.active {
-    color: #5e2ced;
-    background-color:#f0f0f0 !important;
-	border-left-width: 4px;
-    border-left-color: #5e2ced;
-	font-weight:600;
-	font-size: 15px; 
-    width: 200px;
-	height: 55px;
-	margin-left: 97px;
+#profile-main {
+    flex: 1 0 auto;
 }
-.nav-tabs .nav-link {
-    border: 1px solid transparent;
-    border-top-left-radius: 0rem!important;
-    border-top-right-radius: 0rem!important;
-	    color: black;
-}
-.bt-nav-profile{
-	color: #5e2ced;
-	background-color: white;
-	border: 1px solid white;
-	font-weight: 500;
-}
-.tab-content>.active {
-    display: block;
-    background: #f0f0f0;
-    min-height: 165px;
-}
-.nav.nav-tabs {
-    float: left;
-    display: block;
-    margin-right: 20px;
-    border-bottom: 0;
-    border-right: 1px solid transparent;
-    padding-right: 15px;
-	background-color: white;
-	    height: 100%;
-		width: 22%;
 
-}
-.dashboard-img{
-	width: 17px;
-    height: 16px;
-    margin: 11px 8px 7px 3px;
-}
-.leg { 
-        position: relative;
-    bottom: 29px;
-    vertical-align: bottom;
-    /* text-align: center; */
-    font-size: 12px;
-    font-size: 1.2em; 
-    user-select: none;
-    display: block;
-    z-index: 1000;
-    margin: 0 0 -17px 33px;
-}
-.fa-user{
-	color: black;
-	position: relative; 
-    margin-left: 9px;
-	font-size: 20px;
-}
-.ds-h1 {
-	font-size:25px;
-	padding: 76px 0 0 0;
-	font-weight: 400;
-}
-.ds-h2{
-	font-size:18px; 
-	font-weight: 600;
-}
-.ds-a{
-	font-size:16px; 
-	font-weight: 600;
-}
+
+/*************** GLOBAL ***************/
+
 .shadow {
-    border: 2px solid #f9f9f9;
-	box-shadow: 0px -1px 9px rgba(0, 0, 0, 0.1);
-	background: white;
+    background-color: var(--color-white);
+    border: 2px solid var(--color-gray-light-1);
+    box-shadow: 0px -1px 9px rgba(0, 0, 0, 0.1);
 }
-.ds-h3{
-	font-size:35px; 
-	font-weight: 600;
+
+
+/*************** SIDEBAR ***************/
+
+.profile-sidebar {
+    height: 100%;
 }
-.ds-s1{
-	font-size:16px; 
-	font-weight: 400;
-	color: #888484;
-	padding: 0px 0px 0px 26px;
+
+.sidebar-list {
+    height: inherit;
+    display: block;
+    border-bottom: 0;
+    list-style-type: none;
 }
-.ds-h2-pro{
-	font-size:14px;
-	font-weight:400;
+
+.sidebar-list>li>a {
+    display: block;
+    padding: 1rem;
+    color: var(--color-black);
 }
-.ds-a-view{
-	font-size: 16px;
-    font-weight: 600;
-	color: #5e2ced;
+
+.sidebar-list>li>a:hover {
+    text-decoration: none;
 }
- 
- .table thead th{
-	 font-size:16px;
-	 color:#b8bcca;
-	 font-weight:400;
- }
- @media only screen and (max-width: 761px) {
-	 .tab-content>.active{
-		     margin-top: 253px;
-				right: 105px;
-				position: relative;
-	 }
-	 .table{
-		 display: block;
-		overflow-y: scroll;
-		width: 69%;
-	 }
- }
- @media only screen 
-    and (device-width : 375px) 
-    and (device-height : 812px) 
-    and (-webkit-device-pixel-ratio : 3) { 
-	           .tab-content>.active{
-		     margin-top: 253px;
-				right: 105px;
-				position: relative;
-	         }
-			  .table{
-			 display: block;
-			overflow-y: scroll;
-			width: 69%;
-		 }
-	}
+
+.sidebar-list>li>a:active,
+.sidebar-list>li>a:focus {
+    outline: 0;
+    text-decoration: none;
+}
+
+.sidebar-list>li>a.active {
+    font-weight: bold;
+    color: var(--color-royal-blue);
+    background-color: var(--color-gray-light);
+    border-left: 3px solid var(--color-royal-blue);
+}
+
+
+/*************** CONTENT ***************/
+
+.profile-content {
+    background-color: var(--color-gray-light);
+}
+
+
+/*************** ICON ***************/
+
+.icon {
+    position: relative;
+}
+
+.icon-dashboard::before {
+    zoom: 50%;
+    transform: scale(0.5);
+    transform-origin: 50% 0;
+    vertical-align: middle;
+    margin-right: 10px;
+    content: url(../images/button.png);
+}
+
+.icon-profile::before {
+    vertical-align: middle;
+    margin-right: 10px;
+    content: url(../images/profile.png);
+}
+
+.icon-setting::before {
+    vertical-align: middle;
+    margin-right: 10px;
+    content: url(../images/setting.png);
+}
+
+.btn-order {
+    font-weight: 500;
+    color: var(--color-royal-blue);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-white);
+}
+
+
+/********* UTILITIES | FONT SIZE ********/
+
+.heading-primary {
+    padding-top: 6rem;
+}
+
+.heading-teriary,
+.heading-teriary-2 {
+    font-size: 1rem;
+}
+
+.heading-teriary {
+    padding: 0px 0px 0px 26px;
+    color: var(--color-gray-dark);
+}
+
+.heading-teriary-2 {
+    color: var(--color-royal-blue);
+}
+
+.heading-teriary-3 {
+    font-size: 14px;
+    font-weight: lighter;
+}
+
+
+/*************** TABLE ***************/
+
+@media(max-width:640px) {
+    .table-zoom {
+        zoom: 75%;
+    }
+}
+
+.table thead th {
+    font-weight: lighter;
+    color: var(--color-gray-dark-1);
+}
+
+.table tbody tr {
+    background-color: var(--color-gray-light);
+}
+
+
+/*************** FOOTER ***************/
+
+footer {
+    flex-shrink: 0;
+}
+
+
+/*************** MEDIA ***************/
+
+@media (min-width: 992px) {
+    .sidebar-list {
+        padding: 5rem 0 0 5rem;
+    }
+    .table td,
+    .table th {
+        padding: .75rem;
+        vertical-align: top;
+    }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 992px) {
+    .sidebar-list {
+        padding: 5rem 0 0 2rem;
+    }
+}
+
+@media (max-width:768px) {
+    .heading-primary {
+        padding-top: 1rem;
+    }
+    .sidebar-list {
+        margin: 1rem 0;
+    }
+}
