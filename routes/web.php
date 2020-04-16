@@ -25,4 +25,5 @@ Route::get('/profile', 'Profile@show')->name('profile');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
+    // Route::post('/products', 'Product@create')->name('create');
 });
