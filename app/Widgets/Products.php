@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Widgets\BaseDimmer;
+use App\Product;
 
 class Products extends BaseDimmer
 {
@@ -22,16 +23,15 @@ class Products extends BaseDimmer
      */
     public function run()
     {
-        $count = Voyager::model('Post')->count();
-        $string = trans_choice('voyager::dimmer.post', $count);
+        $count = Product::count();
 
         return view('voyager::dimmer', array_merge($this->config, [
-            'icon'   => 'voyager-news',
-            'title'  => "{$count} {$string}",
-            'text'   => __('voyager::dimmer.post_text', ['count' => $count, 'string' => Str::lower($string)]),
+            'icon'   => 'voyager-bag',
+            'title'  => "{$count} Products",
+            'text'   => "You have {$count} products in your database. Click on button below to view all posts.",
             'button' => [
-                'text' => __('voyager::dimmer.post_link_text'),
-                'link' => route('voyager.posts.index'),
+                'text' => "View all products",
+                'link' => route('voyager.products.index'),
             ],
             'image' => voyager_asset('images/widget-backgrounds/02.jpg'),
         ]));
