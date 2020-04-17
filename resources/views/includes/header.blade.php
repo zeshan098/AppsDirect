@@ -1,5 +1,5 @@
 @php
-    $routeName = Route::currentRouteName();
+$routeName = Route::currentRouteName();
 @endphp
 <div class="container-fluid {{ $routeName == 'home' ? 'hero ' : ''}} pb-5">
     <div class="container">
@@ -24,8 +24,66 @@
                     </li>
                 </ul>
                 <div class="form-inline my-2 my-lg-0">
-                    <a class="text-white mr-3 anchor" href="#">Login</a>
-                    <a class="btn  my-2 my-sm-0 bt-nav" href="{{ route('order') }}">Order Now</a>
+                    <!-- Authentication Links -->
+                    @guest
+                    <!-- <a class="text-white mr-3 anchor" href="{{ route('login') }}">Login</a> -->
+                    <a class="btn  my-2 my-sm-0 bt-navorder" href="{{ route('login') }}">Login</a>
+                    <a class="btn  my-2 my-sm-0 bt-nav bt-navorder" href="{{ route('order') }}">Order Now</a>
+                    @else
+                    <!-- <div class="form-inline my-2 my-lg-0">
+                                <a class="btn my-2 my-sm-0 bt-nav" href="{{ route('order') }}">Order Now</a>
+                                <a class="nav-link" href="#"> <img src="{{URL::asset('images/msg.png')}}" class="" alt="img"> </a>
+                                <a class="nav-link" href="#"> <img src="{{URL::asset('images/userimg.png')}}" style="width: 40px;" alt="img"> </a>
+                                
+                            </div> -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="nav-item">
+                            <a class="nav-link btn ml-1 my-2 bt-nav" href="{{ route('order') }}">Order Now</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"> <img src="{{URL::asset('images/msg.png')}}" class="" alt="img"> </a>
+                        </li>
+                        <li class="dropdown">
+                            <!-- <a href="http://stackoverflow.com/">Stack Overflow <span class="caret"></span></a> -->
+                            <a id="navbarDropdown" class="nav-link my-2 my-sm-0 dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }} <img src="{{URL::asset('images/userimg.png')}}" style="width: 40px;" alt="img"> <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- <ul class="navbar-nav ml-auto">
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        {{ Auth::user()->name }} <span class="caret"></span>
+                                    </a>
+
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
+                                    </div>
+                                </li>
+                            </ul> -->
+                    @endguest
+                    <!-- <a class="text-white mr-3 anchor" href="#">Login</a>
+                    <a class="btn  my-2 my-sm-0 bt-nav" href="{{ route('order') }}">Order Now</a> -->
                 </div>
             </div>
         </nav>

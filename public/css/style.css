@@ -213,7 +213,8 @@ color: #818aa7;
 	border-radius: 0px;
 	font-weight:600;
 	font-size:16px;
-	width: 100px;
+	/* width: 100px; */
+	min-width:100px;
 }
 .bt-navorder:hover{
 	background-color:  #5e2ced;
