@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
 
 class Order extends Controller
 {
     public function show()
     {
-        return view('pages.order');
+        $products = Product::all();
+        
+        return view('pages.order', compact('products'));
     }
 }
