@@ -298,7 +298,7 @@ a.btn.my-2.my-sm-0.bt-nav-profile {
     color: #682ced;
     background-color: white !important;
     font-weight: 700;
-    font-size: 17px;
+    font-size: 13px;
 }
 
 .sel-ord {
@@ -431,6 +431,9 @@ a.btn.my-2.my-sm-0.bt-nav-profile {
     padding: 0px 14px;
 }
 @media only screen and (max-width: 761px) {
+    div.top-menu {
+        display: none;
+    }
     .col-sm-12 {
         width: 100%;
     }
@@ -550,7 +553,9 @@ a.btn.my-2.my-sm-0.bt-nav-profile {
 }
 
 @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
-    font-size: 9px;
+    div.top-menu {
+        display: none;
+    }
     .pt-5 {
         font-size: 43px;
     }

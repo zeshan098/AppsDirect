@@ -76,7 +76,7 @@
 <div class="container py-5 top-menu" style="height: auto;">
     <div class="row">
         <div class="col-12">
-            <nav class="nav nav-pills">
+            <nav class="nav nav-pills" id="nav-pills">
                 <a href="#section1" class="nav-item nav-link active">1.your Details</a>
                 <a href="#section2" class="nav-item nav-link">2.Select Package</a>
                 <a href="#section3" class="nav-item nav-link">3.Select Additional options</a>
@@ -939,5 +939,12 @@
         // $("#html_layouts_price").html();
     });
 </script>
+<script>
+$('body').scrollspy({
+  target: '#nav-pills',
+  offset: 52
+});
+
  
+</script>
 @stop
