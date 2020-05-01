@@ -589,7 +589,7 @@
                                         <p class="px-5 mt-3 pd-lp1 section_here" data-amount="0"><input type="checkbox" class="section_element_checkbox checkbox" value="0"> Normalize CSS </p>
                                         @endif
                                         @if($products[0]->css_print == 1)
-                                        <p class="px-5 mt-3 pd-lp1 section_here" data-amount="0"><input type="checkbox" class="section_element_checkbox checkbox" value="{{$products[0]->css_print_amount}}"> Print CSS € {{$products[0]->css_print_amount}} </p>
+                                        <p class="px-5 mt-3 pd-lp1 section_here" data-amount="0"><input type="checkbox" class="section_element_checkbox checkbox" value="{{$products[0]->css_print_amount}}"> Print CSS <span class="float-right">€ {{$products[0]->css_print_amount}}</span></p>
                                         @endif
                                         @if($products[0]->css_contact_form == 1)
                                         <p class="px-5 mt-3 pd-lp1 section_here" data-amount="0"><input type="checkbox" class="section_element_checkbox checkbox" value="{{$products[0]->css_contact_form_amount}}"> Contact Form Implementation <span class="float-right">€ {{$products[0]->css_contact_form_amount}}</span></p>
