@@ -27,8 +27,8 @@ $routeName = Route::currentRouteName();
                     <!-- Authentication Links -->
                     @guest
                     <!-- <a class="text-white mr-3 anchor" href="{{ route('login') }}">Login</a> -->
-                    <a class="btn  my-2 my-sm-0 bt-navorder" href="{{ route('login') }}">Login</a>
-                    <a class="btn  my-2 my-sm-0 bt-nav bt-navorder" href="{{ route('order') }}">Order Now</a>
+                    <a class="text-white mr-3 anchor" href="{{ route('login') }}">Login</a>
+                    <a class="btn  my-2 my-sm-0 bt-nav" href="{{ route('order') }}">Order Now</a>
                     @else
                     <!-- <div class="form-inline my-2 my-lg-0">
                                 <a class="btn my-2 my-sm-0 bt-nav" href="{{ route('order') }}">Order Now</a>

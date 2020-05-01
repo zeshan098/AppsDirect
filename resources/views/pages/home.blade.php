@@ -34,7 +34,7 @@
                 <p style="color: #818aa7;font-size: 17px;">start from</p>
                 <h1 class="mt-2 h5-ser">€ 250</h1>
                 <p style="color: #818aa7;font-size: 15px;">5 working days</p>
-                <button class="btn my-2 my-sm-0 bt-nav2 ">Order Now &nbsp<i class="fa fa-angle-right"></i></button>
+                <button class="btn my-2 my-sm-0 bt-nav2 " onclick="location.href='/order'">Order Now &nbsp<i class="fa fa-angle-right"></i></button>
             </div>
 
         </div>
@@ -46,7 +46,7 @@
                 <p style="color: #818aa7;font-size: 17px;">start from</p>
                 <h1 class="mt-2 h5-ser">€ 500</h1>
                 <p style="color: #818aa7;font-size: 17px;">14 working days</p>
-                <button class="btn my-2 my-sm-0 bt-nav2 ">Order Now &nbsp<i class="fa fa-angle-right"></i></button>
+                <button class="btn my-2 my-sm-0 bt-nav2 " onclick="location.href='/order'">Order Now &nbsp<i class="fa fa-angle-right"></i></button>
             </div>
 
         </div>
@@ -58,7 +58,7 @@
                 <p style="color: #818aa7;font-size: 17px;">start from</p>
                 <h1 class="mt-2 h5-ser">€ 850</h1>
                 <p style="color: #818aa7;font-size: 17px;">14 working days</p>
-                <button class="btn my-2 my-sm-0 bt-nav2 ">Order Now &nbsp<i class="fa fa-angle-right"></i></button>
+                <button class="btn my-2 my-sm-0 bt-nav2 " onclick="location.href='/order'">Order Now &nbsp<i class="fa fa-angle-right"></i></button>
             </div>
 
         </div>
@@ -70,7 +70,7 @@
                 <p style="color: #818aa7;font-size: 17px;">start from</p>
                 <h1 class="mt-3 h5-ser">€ 500</h1>
                 <p style="color: #818aa7;font-size: 17px;">14 working days</p>
-                <button class="btn my-2 my-sm-0 bt-nav2 ">Order Now &nbsp<i class="fa fa-angle-right"></i></button>
+                <button class="btn my-2 my-sm-0 bt-nav2 " onclick="location.href='/order'">Order Now &nbsp<i class="fa fa-angle-right"></i></button>
 
             </div>
 
@@ -162,8 +162,8 @@
         <div class="col-md-12 text-center">
             <div class="p-4">
                 <h1 class="mt-5 mb-4 pt-5 app-h1 text-white mt-5">Ready To Try AppDirect</h1>
-                <a class="btn my-2 my-sm-0 bt-app4 ">Get Start <i class=" fa fa-angle-right pl-1" style="font-weight: 700;"></i> </a>
-                <a class="btn my-2 my-sm-0 bt-app5 ">Login</a>
+                <a class="btn my-2 my-sm-0 bt-app4 " href="/order">Get Start <i class=" fa fa-angle-right pl-1" style="font-weight: 700;"></i> </a>
+                <a class="btn my-2 my-sm-0 bt-app5 " href="/login">Login</a>
             </div>
         </div>
     </div>
