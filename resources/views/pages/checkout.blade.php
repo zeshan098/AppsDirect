@@ -89,33 +89,58 @@
                     <h1 class="frm-ordh1 pt-4">1.Your Details <span class=" pull-right"><a class="ad-dib" href="">Edit details</a></span></h1>
 
                     <p class="ml-2 mt-3 ne-por">Your Name</p>
-                    <p class="ml-3 ne-poh1">Hussnain</p>
+                    <p class="ml-3 ne-poh1">{{$order->name}}</p>
 
                     <p class="ml-2 mt-3 ne-por">Email</p>
-                    <p class="ml-3 ne-poh1">Hussnain@mail.com</p>
+                    <p class="ml-3 ne-poh1">{{$order->email}}</p>
 
                     <p class="ml-2 mt-3 ne-por">Project title</p>
-                    <p class="ml-3 ne-poh1">AppDirect</p>
+                    <p class="ml-3 ne-poh1">{{$order->project_title}}</p>
 
                     <p class="ml-2 mt-3 ne-por">Number of Pages</p>
-                    <p class="ml-3 ne-poh1">5 pages</p>
+                    <p class="ml-3 ne-poh1">{{$order->inner_pages + 1}} pages</p>
 
                     <p class="ml-2 mt-3 ne-por">Upload files</p>
-                    <p class="ml-3 ne-poh1">1.file.psd</p>
+                    <p class="ml-3 ne-poh1">{{$order->project_document}}</p>
 
+                    @if($order->web_design_order == 1)
                     <p class="ml-2 mt-3 ne-por">Webdesign</p>
-                    <p class="ml-3 ne-poh1">5 pages</p>
+                    <p class="ml-3 ne-poh1">{{$order->inner_pages + 1}} pages</p>
+                    @endif
 
                     <p class="ml-2 mt-3 ne-por">Notes</p>
-                    <p class="ml-3 ne-poh1">Lorem ipsum dolor sit amet, consectetur.</p>
+                    <p class="ml-3 ne-poh1">{{$order->notes}}</p>
 
                     <a class="ad-dib pull-right" href="">Edit details</a>
                     <h1 class="frm-ordh1 pt-4">2.Select Package </h1>
                     <div class="py-2 wp-webd-1 pl-3 pt-2">
-                        <input type="radio" checked><i class="fa fa-wordpress pl-2 " style="color: #00769d;font-size: 22px;"></i>
-                        <b class="dobv1">Wordpress website
-                            <span class="float-right mr-auto d-block pr-2 " style="font-size: 16px;">€ 250</span>
-                        </b>
+                        @if($order->product_name == "Wordpress")
+                            <input type="radio" checked><i class="fa fa-wordpress pl-2 " style="color: #00769d;font-size: 22px;"></i>
+                            <b class="dobv1">Wordpress website
+                                <span class="float-right mr-auto d-block pr-2 " style="font-size: 16px;">€ {{$order->selected_product_price}}</span>
+                            </b>
+                        @endif
+                        @if($order->product_name == "Magento")
+                            <input type="radio" checked>
+                            <img src="{{URL::asset('images/megento.png')}}" class="img-fluid ml-1" style="height: 30px;width: 30px; margin: 7px 39px 13px 26px;" alt="">
+                            <b class="dobv1">Magneto Webshop
+                                <span class="float-right mr-auto d-block pr-2 " style="font-size: 16px;">€ {{$order->selected_product_price}}</span>
+                            </b>
+                            @endif
+                            @if($order->product_name == "Shopify")
+                            <input type="radio" checked>
+                            <img src="{{URL::asset('images/shopify.png')}}" class="img-fluid ml-1" style="height: 30px;width: 30px; margin: 7px 39px 13px 26px;" alt="">
+                            <b class="dobv1">Shopify Webshop
+                                <span class="float-right mr-auto d-block pr-2 " style="font-size: 16px;">€ {{$order->selected_product_price}}</span>
+                            </b>
+                            @endif
+                            @if($order->product_name == "Woocommerce")
+                            <input type="radio" checked>
+                            <img src="{{URL::asset('images/wooo.png')}}" class="img-fluid ml-1" style="height: 30px;width: 30px; margin: 7px 39px 13px 26px;" alt="">
+                            <b class="dobv1">Woocommerce Webshop
+                                <span class="float-right mr-auto d-block pr-2 " style="font-size: 16px;">€ {{$order->selected_product_price}}</span>
+                            </b>
+                        @endif
 
                     </div>
 

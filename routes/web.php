@@ -23,8 +23,9 @@ Route::get('/clear-cache', function() {
 });
 
 Route::get('/', 'Home@show')->name('home');
-Route::get('/order', 'Order@show')->name('order')->middleware("auth");
-Route::get('/checkout', 'Checkout@show')->name('checkout');
+Route::get('/order', 'OrderController@show')->name('order')->middleware("auth");
+Route::post('/order/store', 'OrderController@store')->name('store')->middleware("auth");
+Route::get('/checkout/{id}', 'Checkout@show')->name('checkout');
 Route::get('/profile', 'Profile@show')->name('profile');
 
 

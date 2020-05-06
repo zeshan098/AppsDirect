@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Order;
 
 class Checkout extends Controller
 {
-    public function show()
+    public function show($id)
     {
-        return view('pages.checkout');
+        $order = Order::find($id);
+        return view('pages.checkout', compact('order'));
     }
 }
