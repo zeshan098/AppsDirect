@@ -28,6 +28,9 @@ Route::post('/order/store', 'OrderController@store')->name('store')->middleware(
 Route::get('/checkout/{id}', 'Checkout@show')->name('checkout');
 Route::get('/profile', 'Profile@show')->name('profile');
 
+Route::get('stripe', 'StripePaymentController@stripe')->name('stripe')->middleware("auth");
+Route::post('stripe', 'StripePaymentController@stripePost')->name('stripe.post')->middleware("auth");
+
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
