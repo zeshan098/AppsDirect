@@ -105,11 +105,11 @@
                         <div id="section1">
                             <h1 class="frm-ordh1 pt-4">1.Your Details</h1>
                             <label class="mt-3 ord-lbl" for="">Your Name</label>
-                            <input class="form-control py-2 inp-ord" type="text" name="name" placeholder="Name">
+                            <input class="form-control py-2 inp-ord" type="text" name="name" placeholder="Name" required>
                             <label class="mt-3 ord-lbl" for="">Email</label>
-                            <input class="inp-ord py-2 form-control" type="text" name="email" placeholder="example@mail.com">
+                            <input class="inp-ord py-2 form-control" type="text" name="email" placeholder="example@mail.com" required>
                             <label class="mt-3 ord-lbl" for="">Project title</label>
-                            <input class="inp-ord py-2 form-control" type="text" name="project_title" placeholder="Project Title Here">
+                            <input class="inp-ord py-2 form-control" type="text" name="project_title" placeholder="Project Title Here" required>
                             <label class="mt-3 ord-lbl" for="">Number of inner pages</label>
                             <select name="inner_pages" id="inner_pages" class="form-control sel-ord">
                                 <option value="0">None</option>
