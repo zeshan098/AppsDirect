@@ -1,8 +1,9 @@
 @extends('layouts.default')
 @section('css')
-<link rel="stylesheet" href="{{ URL::asset('css/dashboard.css') }}">
+ 
 @stop
 @section('content')
+ 
 <main id="profile-main">
     <div class="container-fluid h-100">
         <div class="row h-100">
@@ -33,20 +34,26 @@
                             <div class="col-12 col-sm-4 mt-4">
                                 <div class="shadow py-3 px-3">
                                     <h6>Open projects <a href="#" class="pull-right">view</a></h6>
-                                    <h2 class="mt-4"><strong> 4 </strong><span class="heading-teriary">projects</span></h2>
+                                    @foreach($complete_order as $complete_order)
+                                    <h2 class="mt-4"><strong> {{$complete_order->complete}} </strong><span class="heading-teriary">projects</span></h2>
+                                    @endforeach 
                                 </div>
                             </div>
                             <div class="col-12 col-sm-4 mt-4">
                                 <div class="shadow py-3 px-3">
                                     <h6>Close projects <a href="#" class="pull-right">view</a></h6>
-                                    <h2 class="mt-4"><strong> 6 </strong><span class="heading-teriary">projects</span></h2>
+                                    @foreach($close_project as $close_project)
+                                    <h2 class="mt-4"><strong> {{$close_project->closed}} </strong><span class="heading-teriary">projects</span></h2>
+                                    @endforeach 
                                 </div>
                             </div>
                         </div>
                         <!-- viewInfo -->
                         <div class="row mt-5">
                             <div class="col-6 col-md-6">
-                                <h5 class="heading-teriary-3">All projects(10)</h5>
+                            @foreach($total_order as $total_order)
+                                <h5 class="heading-teriary-3">All projects({{$total_order->total}})</h5>
+                            @endforeach     
                             </div>
                             <div class="col-6 col-md-6">
                                 <a href="#" class="pull-right heading-teriary-2">view all</a>
@@ -67,46 +74,20 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    @foreach($user_order as $user_order)
                                         <tr>
                                             <th scope="row">01</th>
-                                            <td>01/03/04</td>
-                                            <td>My web page</td>
-                                            <td>My web page</td>
-                                            <td>closed</td>
+                                            <td>{{$user_order->niceDate}}</td>
+                                            <td>{{$user_order->project_title}}</td>
+                                            <td>{{$user_order->notes}}</td>
+                                            @if($user_order->status == '1')
+                                            <td>Open</td>
+                                            @else
+                                            <td>Close</td>
+                                            @endif
                                             <td><a href="#">view project</a></td>
                                         </tr>
-                                        <tr>
-                                            <th scope="row">01</th>
-                                            <td>01/03/04</td>
-                                            <td>My web page</td>
-                                            <td>My web page</td>
-                                            <td>open</td>
-                                            <td><a href="#">view project</a></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">01</th>
-                                            <td>01/03/04</td>
-                                            <td>My web page</td>
-                                            <td>My web page</td>
-                                            <td>open</td>
-                                            <td><a href="#">view project</a></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">01</th>
-                                            <td>01/03/04</td>
-                                            <td>My web page</td>
-                                            <td>My web page</td>
-                                            <td>open</td>
-                                            <td><a href="#">view project</a></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">01</th>
-                                            <td>01/03/04</td>
-                                            <td>My web page</td>
-                                            <td>My web page</td>
-                                            <td>open</td>
-                                            <td><a href="#">view project</a></td>
-                                        </tr>
+                                    @endforeach     
                                     </tbody>
                                 </table>
                             </div>
@@ -132,4 +113,5 @@
         </div>
     </div>
 </main>
+ 
 @stop

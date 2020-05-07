@@ -201,4 +201,10 @@ footer {
     .sidebar-list {
         margin: 1rem 0;
     }
+    #profile-main {
+        width: 100%;
+    }
+    .btn-nav {
+        padding-top: 16px;
+    }
 }

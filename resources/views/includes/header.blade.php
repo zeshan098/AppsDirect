@@ -1,7 +1,7 @@
 @php
 $routeName = Route::currentRouteName();
 @endphp
-<div class="container-fluid {{ $routeName == 'home' ? 'hero ' : ''}} pb-5">
+<div class="container-fluid {{ $routeName == 'home' ? 'hero ' : ''}}  ">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
             <a class="navbar-brand" href="{{ route('home') }}">AppsDirect</a>
@@ -38,7 +38,7 @@ $routeName = Route::currentRouteName();
                             </div> -->
                     <ul class="nav navbar-nav navbar-right">
                         <li class="nav-item">
-                            <a class="nav-link btn ml-1 my-2 bt-nav" href="{{ route('order') }}">Order Now</a>
+                            <a class="nav-link bt-nav" href="{{ route('order') }}">Order Now</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#"> <img src="{{URL::asset('images/msg.png')}}" class="" alt="img"> </a>
