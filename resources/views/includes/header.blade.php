@@ -41,7 +41,7 @@ $routeName = Route::currentRouteName();
                             <a class="nav-link bt-nav" href="{{ route('order') }}">Order Now</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"> <img src="{{URL::asset('images/msg.png')}}" class="" alt="img"> </a>
+                            <a class="nav-link" href="{{ route('user_message') }}"> <img src="{{URL::asset('images/msg.png')}}" class="" alt="img"> </a>
                         </li>
                         <li class="dropdown">
                             <!-- <a href="http://stackoverflow.com/">Stack Overflow <span class="caret"></span></a> -->

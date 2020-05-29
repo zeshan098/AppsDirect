@@ -3,6 +3,8 @@
 <div class="container-fluid order-ord">
     <div class="container">
         <div class="row">
+            <div clss="col-md-3">
+             </div>
             <div class="col-md-6 col-md-offset-3">
                 <div class="panel panel-default credit-card-box">
                     <div class="panel-heading display-table">
@@ -32,7 +34,7 @@
                             </div>
 
                             <div class='form-row row'>
-                                <div class='col-xs-12 form-group card required'>
+                                <div class='col-xs-12 form-group card required' style="background: none;">
                                     <label class='control-label'>Card Number</label> <input autocomplete='off' class='form-control card-number' size='20' type='text'>
                                 </div>
                             </div>
@@ -66,6 +68,8 @@
                     </div>
                 </div>
             </div>
+            <div clss="col-md-3">
+             </div>
         </div>
     </div>
 </div>

@@ -42,3 +42,6 @@ Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 // Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home', 'Home@show')->name('home');
+
+Route::get('/user_message', 'User_Messages@show')->name('user_message')->middleware("auth");
+Route::post('/user_reply', 'User_Messages@user_reply')->name('user_reply')->middleware("auth");

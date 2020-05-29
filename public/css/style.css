@@ -37,6 +37,7 @@ html {
     font-size: 15px;
 }
 .bt-nav {
+    margin-top: 7px;
     color: #5e2ced;
     background-color: white;
     border: 1px solid white;
