@@ -34,7 +34,7 @@
                 <p style="color: #818aa7;font-size: 17px;">start from</p>
                 <h1 class="mt-2 h5-ser">€ 250</h1>
                 <p style="color: #818aa7;font-size: 15px;">5 working days</p>
-                <button class="btn my-2 my-sm-0 bt-nav2 " onclick="location.href='/order'">Order Now &nbsp<i class="fa fa-angle-right"></i></button>
+                <button class="btn my-2 my-sm-0 bt-nav2 " onclick="location.href='/order?product=wordpress'">Order Now &nbsp<i class="fa fa-angle-right"></i></button>
             </div>
 
         </div>
@@ -46,7 +46,7 @@
                 <p style="color: #818aa7;font-size: 17px;">start from</p>
                 <h1 class="mt-2 h5-ser">€ 500</h1>
                 <p style="color: #818aa7;font-size: 17px;">14 working days</p>
-                <button class="btn my-2 my-sm-0 bt-nav2 " onclick="location.href='/order'">Order Now &nbsp<i class="fa fa-angle-right"></i></button>
+                <button class="btn my-2 my-sm-0 bt-nav2 " onclick="location.href='/order?product=shopify'">Order Now &nbsp<i class="fa fa-angle-right"></i></button>
             </div>
 
         </div>
@@ -58,7 +58,7 @@
                 <p style="color: #818aa7;font-size: 17px;">start from</p>
                 <h1 class="mt-2 h5-ser">€ 850</h1>
                 <p style="color: #818aa7;font-size: 17px;">14 working days</p>
-                <button class="btn my-2 my-sm-0 bt-nav2 " onclick="location.href='/order'">Order Now &nbsp<i class="fa fa-angle-right"></i></button>
+                <button class="btn my-2 my-sm-0 bt-nav2 " onclick="location.href='/order?product=magento'">Order Now &nbsp<i class="fa fa-angle-right"></i></button>
             </div>
 
         </div>
@@ -70,7 +70,7 @@
                 <p style="color: #818aa7;font-size: 17px;">start from</p>
                 <h1 class="mt-3 h5-ser">€ 500</h1>
                 <p style="color: #818aa7;font-size: 17px;">14 working days</p>
-                <button class="btn my-2 my-sm-0 bt-nav2 " onclick="location.href='/order'">Order Now &nbsp<i class="fa fa-angle-right"></i></button>
+                <button class="btn my-2 my-sm-0 bt-nav2 " onclick="location.href='/order?product=woocommerce'">Order Now &nbsp<i class="fa fa-angle-right"></i></button>
 
             </div>
 

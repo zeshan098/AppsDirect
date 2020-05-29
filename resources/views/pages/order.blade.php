@@ -155,47 +155,87 @@
                             <div class="py-2 wp-webd pt-2 pl-3 mt-1">
                                 @if($product->name == "Wordpress")
                                 <label class="rad">
-                                    <input class="product_name" data-price_inner_per_page="{{$product->amount_inner_per_page}}" data-price_design_per_page="{{$product->amount_design_per_page}}" data-price_product="{{$product->amount}}" type="radio" name="product_name" value="{{$product->name}}">
+                                    <input class="product_name product_name_wordpress" data-price_inner_per_page="{{$product->amount_inner_per_page}}" data-price_design_per_page="{{$product->amount_design_per_page}}" data-price_product="{{$product->amount}}" type="radio" name="product_name" value="{{$product->name}}">
                                     <i></i>
                                 </label>
                                 <i class="fa fa-wordpress pl-2 " style=""></i>
                                 <b class="dobv1">Wordpress website
                                     <span class="float-right mr-auto d-block pr-2 ">€ {{$product->amount}}</span>
                                 </b>
+                                <div class="product_description wordpress_description" style="display: none;">
+                                    <p class="frm-p23 pl-4 pt-4">Installation service &nbsp<span style="color: black;font-size: 15px;font-weight: 600;">3 working days</span></p>
+                                    <p class="frm-p23 pl-4 ">4 to 7 days turnaround</p>
+                                    <p class="bp-r2 px-3"><span style="color: black;font-size: 14px;font-weight: 400;">Responsive wordpress package</span> include conversion of your psd file into the fully functional Wordpress theme compatible across all major browsers and devices, easily manageable through dashboard with integrated post and pages, user-friendly widget ready Structure, Optimized for SEO & Load Speed with latest browser versions compatibility including IE9+, Firefox, Opera, Google Chrome and Safari (Windows & Mac). Minimum turnaround time 3-4 days depending on complexity of layout.Customizing the available wordpress plugins as per your design.
+                                    It also includes features like Custom Post Type Integration, Wp-ecommerce, WooCommerce implementations, etc. This package will improve page readability for search engines as well as various browsers with disabled or limited CSS.<br>
+                                    <span style="color: black;font-size: 14px;font-weight: 400;"> (HTML5 and installation on live server along with Twitter Bootstrap, Sass, Foundation and Boiler plate framework also available under additional options)</span>
+                                    </p>
+                                    <p class="px-3" style="color: black;font-size: 14px;font-weight: 400;">The cost for per additional (Inner) page for Wordpress is +$119.</p>
+                                    <p class="px-3" style="color: black;font-size: 14px;font-weight: 400;">File supported: Sketch, XD, Figma, InVision, Zeplin, Muse, PSD, AI, PNG, INDD, EPS , JPG, PDF or TIFF</p>
+
+                                </div>
                                 @endif
                                 @if($product->name == "Magento")
                                 <label class="rad">
-                                    <input class="product_name" data-price_inner_per_page="{{$product->amount_inner_per_page}}" data-price_design_per_page="{{$product->amount_design_per_page}}" data-price_product="{{$product->amount}}" type="radio" name="product_name" value="{{$product->name}}">
+                                    <input class="product_name product_name_magento" data-price_inner_per_page="{{$product->amount_inner_per_page}}" data-price_design_per_page="{{$product->amount_design_per_page}}" data-price_product="{{$product->amount}}" type="radio" name="product_name" value="{{$product->name}}">
                                     <i></i>
                                 </label>
                                 <img src="{{URL::asset('images/megento.png')}}" class="img-fluid ml-1" style="height: 30px;width: 30px; margin: 7px 39px 13px 26px;" alt="">
                                 <b class="dobv1">Magneto Webshop
                                     <span class="float-right mr-auto d-block pr-2 ">€ {{$product->amount}}</span>
                                 </b>
+                                <div class="product_description magento_description" style="display: none;">
+                                    <p class="frm-p23 pl-4 pt-4">Installation service &nbsp<span style="color: black;font-size: 15px;font-weight: 600;">3 working days</span></p>
+                                    <p class="frm-p23 pl-4 ">4 to 7 days turnaround</p>
+                                    <p class="bp-r2 px-3"><span style="color: black;font-size: 14px;font-weight: 400;">Responsive wordpress package</span> include conversion of your psd file into the fully functional Wordpress theme compatible across all major browsers and devices, easily manageable through dashboard with integrated post and pages, user-friendly widget ready Structure, Optimized for SEO & Load Speed with latest browser versions compatibility including IE9+, Firefox, Opera, Google Chrome and Safari (Windows & Mac). Minimum turnaround time 3-4 days depending on complexity of layout.Customizing the available wordpress plugins as per your design.
+                                    It also includes features like Custom Post Type Integration, Wp-ecommerce, WooCommerce implementations, etc. This package will improve page readability for search engines as well as various browsers with disabled or limited CSS.<br>
+                                    <span style="color: black;font-size: 14px;font-weight: 400;"> (HTML5 and installation on live server along with Twitter Bootstrap, Sass, Foundation and Boiler plate framework also available under additional options)</span>
+                                    </p>
+                                    <p class="px-3" style="color: black;font-size: 14px;font-weight: 400;">The cost for per additional (Inner) page for Wordpress is +$119.</p>
+                                    <p class="px-3" style="color: black;font-size: 14px;font-weight: 400;">File supported: Sketch, XD, Figma, InVision, Zeplin, Muse, PSD, AI, PNG, INDD, EPS , JPG, PDF or TIFF</p>
 
-                                </span>
+                                </div>
                                 @endif
                                 @if($product->name == "Shopify")
                                 <label class="rad">
-                                    <input class="product_name" data-price_inner_per_page="{{$product->amount_inner_per_page}}" data-price_design_per_page="{{$product->amount_design_per_page}}" data-price_product="{{$product->amount}}" type="radio" name="product_name" value="{{$product->name}}">
+                                    <input class="product_name product_name_shopify" data-price_inner_per_page="{{$product->amount_inner_per_page}}" data-price_design_per_page="{{$product->amount_design_per_page}}" data-price_product="{{$product->amount}}" type="radio" name="product_name" value="{{$product->name}}">
                                     <i></i>
                                 </label>
                                 <img src="{{URL::asset('images/shopify.png')}}" class="img-fluid ml-1" style="height: 30px;width: 30px; margin: 7px 39px 13px 26px;" alt="">
                                 <b class="dobv1">Shopify Webshop
                                     <span class="float-right mr-auto d-block pr-2 ">€ {{$product->amount}}</span>
                                 </b>
+                                <div class="product_description shopify_description" style="display: none;">
+                                    <p class="frm-p23 pl-4 pt-4">Installation service &nbsp<span style="color: black;font-size: 15px;font-weight: 600;">3 working days</span></p>
+                                    <p class="frm-p23 pl-4 ">4 to 7 days turnaround</p>
+                                    <p class="bp-r2 px-3"><span style="color: black;font-size: 14px;font-weight: 400;">Responsive wordpress package</span> include conversion of your psd file into the fully functional Wordpress theme compatible across all major browsers and devices, easily manageable through dashboard with integrated post and pages, user-friendly widget ready Structure, Optimized for SEO & Load Speed with latest browser versions compatibility including IE9+, Firefox, Opera, Google Chrome and Safari (Windows & Mac). Minimum turnaround time 3-4 days depending on complexity of layout.Customizing the available wordpress plugins as per your design.
+                                    It also includes features like Custom Post Type Integration, Wp-ecommerce, WooCommerce implementations, etc. This package will improve page readability for search engines as well as various browsers with disabled or limited CSS.<br>
+                                    <span style="color: black;font-size: 14px;font-weight: 400;"> (HTML5 and installation on live server along with Twitter Bootstrap, Sass, Foundation and Boiler plate framework also available under additional options)</span>
+                                    </p>
+                                    <p class="px-3" style="color: black;font-size: 14px;font-weight: 400;">The cost for per additional (Inner) page for Wordpress is +$119.</p>
+                                    <p class="px-3" style="color: black;font-size: 14px;font-weight: 400;">File supported: Sketch, XD, Figma, InVision, Zeplin, Muse, PSD, AI, PNG, INDD, EPS , JPG, PDF or TIFF</p>
 
-                                </span>
+                                </div>
                                 @endif
                                 @if($product->name == "Woocommerce")
                                 <label class="rad">
-                                    <input class="product_name" data-price_inner_per_page="{{$product->amount_inner_per_page}}" data-price_design_per_page="{{$product->amount_design_per_page}}" data-price_product="{{$product->amount}}" type="radio" name="product_name" value="{{$product->name}}">
+                                    <input class="product_name product_name_woocommerce" data-price_inner_per_page="{{$product->amount_inner_per_page}}" data-price_design_per_page="{{$product->amount_design_per_page}}" data-price_product="{{$product->amount}}" type="radio" name="product_name" value="{{$product->name}}">
                                     <i></i>
                                 </label>
                                 <img src="{{URL::asset('images/wooo.png')}}" class="img-fluid ml-1" style="height: 30px;width: 45px; margin: 7px 15px 13px 26px;" alt="">
                                 <b class="dobv1">Woocommerce Webshop
                                     <span class="float-right mr-auto d-block pr-2 ">€ {{$product->amount}}</span>
                                 </b>
+                                <div class="product_description woocommerce_description" style="display: none;">
+                                    <p class="frm-p23 pl-4 pt-4">Installation service &nbsp<span style="color: black;font-size: 15px;font-weight: 600;">3 working days</span></p>
+                                    <p class="frm-p23 pl-4 ">4 to 7 days turnaround</p>
+                                    <p class="bp-r2 px-3"><span style="color: black;font-size: 14px;font-weight: 400;">Responsive wordpress package</span> include conversion of your psd file into the fully functional Wordpress theme compatible across all major browsers and devices, easily manageable through dashboard with integrated post and pages, user-friendly widget ready Structure, Optimized for SEO & Load Speed with latest browser versions compatibility including IE9+, Firefox, Opera, Google Chrome and Safari (Windows & Mac). Minimum turnaround time 3-4 days depending on complexity of layout.Customizing the available wordpress plugins as per your design.
+                                    It also includes features like Custom Post Type Integration, Wp-ecommerce, WooCommerce implementations, etc. This package will improve page readability for search engines as well as various browsers with disabled or limited CSS.<br>
+                                    <span style="color: black;font-size: 14px;font-weight: 400;"> (HTML5 and installation on live server along with Twitter Bootstrap, Sass, Foundation and Boiler plate framework also available under additional options)</span>
+                                    </p>
+                                    <p class="px-3" style="color: black;font-size: 14px;font-weight: 400;">The cost for per additional (Inner) page for Wordpress is +$119.</p>
+                                    <p class="px-3" style="color: black;font-size: 14px;font-weight: 400;">File supported: Sketch, XD, Figma, InVision, Zeplin, Muse, PSD, AI, PNG, INDD, EPS , JPG, PDF or TIFF</p>
+
+                                </div>
                                 @endif
                             </div>
                             @endforeach
@@ -955,6 +995,9 @@
                 $(".selected_package_shopify").hide();
                 $(".selected_package_woocommerce").hide();
 
+                $(".product_description").hide();
+                $('input[name=product_name]:checked').closest(".wp-webd").find(".product_description").show();
+
                 if (selected_product == "Wordpress") {
                     $(".wordpress_selected").show();
                     $(".magento_selected").hide();
@@ -1077,6 +1120,10 @@
                 return document.getElementById("imgupload").files[0].name;
             });
         });
+        @if(isset($_GET["product"]))
+            var get_selected_product = '{{$_GET["product"]}}';
+            $(".product_name_"+get_selected_product).click();
+        @endif
     });
 </script>
 <script>
