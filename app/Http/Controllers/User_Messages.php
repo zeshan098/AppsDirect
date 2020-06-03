@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Message; 
 use Auth;
+use DB;
 
 class User_Messages extends Controller
 {
@@ -13,7 +14,7 @@ class User_Messages extends Controller
          
         $login_id = Auth::user()->id; 
         $messages = Message::where('user_id', '=', $login_id) 
-                    ->orderBy('id', 'ASC')->get();  
+                    ->orderBy('id', 'DESC')->get();  
         
         $user_info = Auth::user();
         return view('pages.user_msg', compact('messages', 'user_info'));
@@ -34,4 +35,32 @@ class User_Messages extends Controller
         ]);
         return redirect('/user_message');
     }
+
+    public function update_status(Request $request)
+    { 
+        $update_Status = $request->get('doc_reply');
+        $upate_read_Status = DB::table('messages')->where('id', $update_Status)
+                             ->update(['status'=> '0' ]);
+        return redirect('admin/messages');
+    }
+
+
+    public function admin_reply(Request $request, $id)
+    { 
+        // dd("zzzz");
+        Message::create([
+            'user_id' => $id,
+            'name' => Auth::user()->name,
+            'email' => Auth::user()->email,
+            'msg' => $request->input('msg'),
+            'datetime' => now(),
+            'status' => '0',
+            'is_user_read' => 'pending',
+            'is_admin_read' => 'send',
+             
+        ]);
+        return redirect('/admin/messages');
+    }
+
+    
 }

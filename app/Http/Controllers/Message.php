@@ -15,7 +15,7 @@ use TCG\Voyager\Events\BreadDataUpdated;
 use TCG\Voyager\Events\BreadImagesDeleted;
 use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Http\Controllers\Traits\BreadRelationshipParser;
-
+ 
 class Message extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
 {
     use BreadRelationshipParser;
@@ -34,6 +34,7 @@ class Message extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
 
     public function index(Request $request)
     {
+        // dd("hello from controller");
         // GET THE SLUG, ex. 'posts', 'pages', etc.
         $slug = $this->getSlug($request);
 
@@ -159,7 +160,9 @@ class Message extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
         if (view()->exists("voyager::$slug.browse")) {
             $view = "voyager::$slug.browse";
         }
-
+        $chat_user = DB::select("SELECT id, user_id, name,msg,datetime, status FROM messages 
+                              WHERE id IN ( SELECT MAX(id) FROM messages where user_id != 8 
+                               GROUP BY user_id )");
         return Voyager::view($view, compact(
             'actions',
             'dataType',
@@ -174,7 +177,8 @@ class Message extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
             'defaultSearchKey',
             'usesSoftDeletes',
             'showSoftDeleted',
-            'showCheckboxColumn'
+            'showCheckboxColumn',
+            'chat_user'
         ));
     }
 
@@ -191,11 +195,17 @@ class Message extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
     //****************************************
 
     public function show(Request $request, $id)
-    {
+    {   
+        // dd($id);  
+       
         $slug = $this->getSlug($request);
 
         $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
-
+        $login_id = $id; 
+        $messages = DB::table($dataType->name)->where('user_id', '=', $login_id) 
+                    ->orderBy('id', 'DESC')->get();  
+        
+        
         $isSoftDeleted = false;
 
         if (strlen($dataType->model_name) != 0) {
@@ -237,8 +247,10 @@ class Message extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
         if (view()->exists("voyager::$slug.read")) {
             $view = "voyager::$slug.read";
         }
-
-        return Voyager::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable', 'isSoftDeleted'));
+        $user_info = $id; 
+        return view('vendor.voyager.messages.admin_msg_show', compact('dataType', 'dataTypeContent', 'isModelTranslatable', 
+                    'isSoftDeleted','messages', 'user_info'));
+        // return Voyager::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable', 'isSoftDeleted'));
     }
 
     //***************************************
@@ -255,6 +267,7 @@ class Message extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
 
     public function edit(Request $request, $id)
     {
+         
         $slug = $this->getSlug($request);
 
         $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
@@ -303,6 +316,7 @@ class Message extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
     // POST BR(E)AD
     public function update(Request $request, $id)
     {
+       //dd("zeshan");
         $slug = $this->getSlug($request);
 
         $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
@@ -912,4 +926,6 @@ class Message extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
         // No result found, return empty array
         return response()->json([], 404);
     }
+
+    
 }
