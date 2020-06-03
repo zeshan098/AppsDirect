@@ -17,8 +17,8 @@
             </form>
                 <br/>
                 <ul class="p-0">
-                 @foreach($messages as $messages)
-                   @if($messages->is_user_read == 'send')
+                 @foreach($messages as $mesg)
+                   @if($mesg->is_user_read == 'send')
 					<li>
 						<div class="row comments mb-2">
 							<div class="col-md-2 col-sm-2 col-3 text-center user-img">
@@ -27,10 +27,10 @@
 							<div class="col-md-9 col-sm-9 col-9 comment rounded mb-2">
 								<h4 class="m-0"><a href="#">{{$user_info->name}}</a></h4>
                                 
-							    <time class="text-white ml-3">{{$messages->datetime}}</time>
+							    <time class="text-white ml-3">{{$mesg->datetime}}</time>
                                 
 							    <like></like>
-							    <p class="mb-0 text-white">{{$messages->msg}}</p>
+							    <p class="mb-0 text-white">{{$mesg->msg}}</p>
                                 
 							</div>
 						</div>
@@ -44,9 +44,9 @@
 								</div>
 								<div class="col-md-7 col-sm-7 col-8 comment rounded mb-2">
 									<h4 class="m-0"><a href="#">Admin</a></h4>
-								    <time class="text-white ml-3">{{$messages->datetime}}</time>
+								    <time class="text-white ml-3">{{$mesg->datetime}}</time>
 								    <like></like>
-								    <p class="mb-0 text-white">{{$messages->msg}}</p>
+								    <p class="mb-0 text-white">{{$mesg->msg}}</p>
 								</div>
 							</div>
 						</li>
