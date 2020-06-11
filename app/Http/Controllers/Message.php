@@ -205,7 +205,12 @@ class Message extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
         $messages = DB::table($dataType->name)->where('user_id', '=', $login_id) 
                     ->orderBy('id', 'DESC')->get();  
         
+<<<<<<< HEAD
         //dd($messages);
+=======
+                    // dd($messages);
+        
+>>>>>>> 362cc63320ad66629c886eaa3c03b5713a19f3ac
         $isSoftDeleted = false;
 
         if (strlen($dataType->model_name) != 0) {
@@ -218,10 +223,12 @@ class Message extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
             if ($dataType->scope && $dataType->scope != '' && method_exists($model, 'scope'.ucfirst($dataType->scope))) {
                 $model = $model->{$dataType->scope}();
             }
-            $dataTypeContent = call_user_func([$model, 'findOrFail'], $id);
-            if ($dataTypeContent->deleted_at) {
-                $isSoftDeleted = true;
-            }
+            // $dataTypeContent = $messages;
+            // dd($messages[0]->id);
+            $dataTypeContent = call_user_func([$model, 'findOrFail'], $messages[0]->id);
+            // if ($dataTypeContent->deleted_at) {
+            //     $isSoftDeleted = true;
+            // }
         } else {
             // If Model doest exist, get data from table name
             $dataTypeContent = DB::table($dataType->name)->where('id', $id)->first();
