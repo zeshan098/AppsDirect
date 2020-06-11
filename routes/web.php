@@ -46,5 +46,5 @@ Route::get('/home', 'Home@show')->name('home');
 Route::get('/user_message', 'User_Messages@show')->name('user_message')->middleware("auth");
 Route::post('/user_reply', 'User_Messages@user_reply')->name('user_reply')->middleware("auth");
 
-Route::post('/update_status', 'User_Messages@update_status')->name('update_status'); 
+Route::post('/update_status', 'User_Messages@update_status')->name('update_status');   
 Route::post('admin/admin_reply/{id}', 'User_Messages@admin_reply')->name('admin_reply');

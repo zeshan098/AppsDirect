@@ -52,6 +52,8 @@ class User_Messages extends Controller
         return redirect('admin/messages');
     }
 
+     
+
 
     public function admin_reply(Request $request, $id)
     { 

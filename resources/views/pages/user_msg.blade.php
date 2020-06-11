@@ -8,7 +8,7 @@
                <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
 				<div class="row comment-box-main p-3 rounded-bottom">
 			  		<div class="col-md-9 col-sm-9 col-9 pr-0 comment-box">
-					  <input type="text" name="msg" class="form-control" placeholder="comment ...." />
+					  <input type="text" name="msg" class="form-control" placeholder="Write Here ...." />
 			  		</div>
 			  		<div class="col-md-3 col-sm-2 col-2 pl-0 text-center send-btn">
 			  			<button class="btn btn-info">Send</button>

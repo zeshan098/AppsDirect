@@ -196,7 +196,7 @@ class Message extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
 
     public function show(Request $request, $id)
     {   
-        // dd($id);  
+        //dd($id);  
        
         $slug = $this->getSlug($request);
 
@@ -205,7 +205,7 @@ class Message extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
         $messages = DB::table($dataType->name)->where('user_id', '=', $login_id) 
                     ->orderBy('id', 'DESC')->get();  
         
-        
+        //dd($messages);
         $isSoftDeleted = false;
 
         if (strlen($dataType->model_name) != 0) {
@@ -226,7 +226,7 @@ class Message extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
             // If Model doest exist, get data from table name
             $dataTypeContent = DB::table($dataType->name)->where('id', $id)->first();
         }
-
+        
         // Replace relationships' keys for labels and create READ links if a slug is provided.
         $dataTypeContent = $this->resolveRelations($dataTypeContent, $dataType, true);
 
@@ -243,7 +243,7 @@ class Message extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
         $this->eagerLoadRelations($dataTypeContent, $dataType, 'read', $isModelTranslatable);
 
         $view = 'voyager::bread.read';
-
+        
         if (view()->exists("voyager::$slug.read")) {
             $view = "voyager::$slug.read";
         }
