@@ -12,6 +12,6 @@ class Message extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'name', 'email', 'msg', 'status', 'datetime', 'user_id', 'is_user_read', 'is_admin_read', 'admin_id' ];
+        'name', 'email', 'msg', 'status', 'order_id', 'datetime', 'user_id', 'is_user_read', 'is_admin_read', 'admin_id' ];
 }
 

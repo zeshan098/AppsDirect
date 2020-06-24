@@ -73,10 +73,10 @@
                                             <th scope="col"></th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody> 
                                     @foreach($user_order as $user_order)
                                         <tr>
-                                            <th scope="row">01</th>
+                                            <th scope="row">{{$loop->iteration}}</th>
                                             <td>{{$user_order->niceDate}}</td>
                                             <td>{{$user_order->project_title}}</td>
                                             <td>{{$user_order->notes}}</td>
@@ -85,7 +85,7 @@
                                             @else
                                             <td>Close</td>
                                             @endif
-                                            <td><a href="#">view project</a></td>
+                                            <td><a href="{{route('view_order',$user_order->id)}}">view project</a></td>
                                         </tr>
                                     @endforeach     
                                     </tbody>

@@ -27,6 +27,7 @@ Route::get('/order', 'OrderController@show')->name('order');
 Route::post('/order/store', 'OrderController@store')->name('store')->middleware("auth");
 Route::get('/checkout/{id}', 'Checkout@show')->name('checkout');
 Route::get('/profile', 'Profile@show')->name('profile');
+Route::get('/view_order/{id}', 'Profile@view_order')->name('view_order');
 
 Route::get('stripe/{id}', 'StripePaymentController@stripe')->name('stripe')->middleware("auth");
 Route::post('stripe', 'StripePaymentController@stripePost')->name('stripe.post')->middleware("auth");

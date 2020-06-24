@@ -205,12 +205,6 @@ class Message extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
         $messages = DB::table($dataType->name)->where('user_id', '=', $login_id) 
                     ->orderBy('id', 'DESC')->get();  
         
-<<<<<<< HEAD
-        //dd($messages);
-=======
-                    // dd($messages);
-        
->>>>>>> 362cc63320ad66629c886eaa3c03b5713a19f3ac
         $isSoftDeleted = false;
 
         if (strlen($dataType->model_name) != 0) {

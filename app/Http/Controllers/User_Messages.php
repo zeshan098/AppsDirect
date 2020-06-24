@@ -10,16 +10,7 @@ use Mail;
 
 class User_Messages extends Controller
 {
-    public function show()
-    {   
-         
-        $login_id = Auth::user()->id; 
-        $messages = Message::where('user_id', '=', $login_id) 
-                    ->orderBy('id', 'DESC')->get();  
-        
-        $user_info = Auth::user();
-        return view('pages.user_msg', compact('messages', 'user_info'));
-    }
+     
 
     public function user_reply(Request $request)
     { 
@@ -30,18 +21,14 @@ class User_Messages extends Controller
             'msg' => $request->input('msg'),
             'datetime' => now(),
             'status' => '1',
+            'order_id' => $request->input('order_id'),
             'is_user_read' => 'send',
             'is_admin_read' => 'pending',
              
         ]);
-        // $user = Auth::user()->id;
-        // $data = array('name'=>Auth::user()->name,  'message' => $request->input('msg'));
-        // Mail::send('pages.mail', $data, function($m) use ($user) {
-        //     $m->to('zeshanahmad630@gmail.com', 'zeshan')
-        //             ->subject('Artisans Web Testing Mail');
-        //     $m->from('noreply@appsdirect.nl','Artisans Web');
-        // });
-        return redirect('/user_message');
+        $order_a = $request->input('order_id');
+        
+        return redirect()->route('view_order', $order_a);
     }
 
     public function update_status(Request $request)
@@ -57,7 +44,7 @@ class User_Messages extends Controller
 
     public function admin_reply(Request $request, $id)
     { 
-        // dd("zzzz");
+         
         Message::create([
             'user_id' => $id,
             'name' => Auth::user()->name,
